@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Simon Ernst</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+<body>
+<header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/silverware/">Silverware Tools</a></li>
+        <li><a href="/hire/">Work with me</a></li>
+      </ul>
+    </nav>
+</header>
+  
+<main style="border-top: dashed #ddd; padding:4px;border-bottom: dashed #ddd; ">
+<h1><span>Hello, my name is Simon Ernst.</span></h1>
+
+<p>Simplicity is at the heart of everything I do. If you are a developer, you know how complex the average deployment system is. Mine looks like this:</p>
+<pre><code>> ./deploy.sh
+Deploying...
+Done.
+</code></pre>
+<pre><code>#!/bin/sh
+
+TARGET_HOST="simon@simonernst.com"
+TARGET_DIR="/var/www/simonernst"
+
+echo Deploying...
+git archive -o bundle.tgz HEAD &&
+scp -q bundle.tgz $TARGET_HOST:/tmp/ &&
+rm bundle.tgz &&
+ssh $TARGET_HOST 'bash -s' <<ENDSSH
+  mkdir -p $TARGET_DIR && rm -rf $TARGET_DIR/*
+  tar xfzo /tmp/bundle.tgz -C $TARGET_DIR
+  rm /tmp/bundle.tgz
+ENDSSH
+echo Done.
+</code></pre>
+<p>Modern operating systems come with a variety of tools and scripting languages pre-installed. There is no need for expensive and resource hungry third party software. It's just a matter of combining what is already there.</p>
+
+</main>
+
+
+  <footer style="padding:4px">
+ 
+  <span><a href="/hire/">I'm available for freelance work</a> </span>
+  <br/>
+  © <a href="/">Simon Ernst</a>
+
+  <a href="/impressum/">Legal contact</a>
+  </footer>
+  </body>
+</html>
+

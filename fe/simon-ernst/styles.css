@@ -1,0 +1,54 @@
+body {
+  color: #222;
+  max-width: 610px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5em;
+  font-family: Optima, Arial, sans-serif;
+}
+
+@media (min-width: 640x) {
+  body {
+    padding: 1em 2em;
+  }
+}
+
+h1 {
+  font-family: "Hoefler Text", Georgia, serif;
+  text-align: center;
+  letter-spacing: -2px;
+  font-weight: 200;
+}
+
+code {
+  font-family: Menlo, monospace;
+  font-size: 0.8em;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+nav, footer {
+  text-align: center;
+}
+
+pre {
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px #eee;
+  padding: 1em;
+}
+
+a {
+  color: #222;
+}
+
+a:hover {
+  text-decoration-color: #ffe801;
+  text-decoration-thickness: 0.2em;
+}
